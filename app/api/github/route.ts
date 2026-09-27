@@ -20,7 +20,7 @@ export async function GET() {
         { headers, next: { revalidate: 900 } }
       ),
       fetch(
-        `https://api.github.com/users/${USERNAME}/events/public?per_page=8`,
+        `https://api.github.com/users/${USERNAME}/events/public?per_page=100`,
         { headers, next: { revalidate: 300 } }
       ),
     ]);
