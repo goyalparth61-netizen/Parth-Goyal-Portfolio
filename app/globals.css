@@ -162,13 +162,17 @@ button,a{-webkit-tap-highlight-color:transparent}
 .section-intro h2{font-size:31px;line-height:.95;margin:0}.section-intro h2 em,.large-heading em{color:#72757b;font-style:normal}
 .section-intro p{margin:0;color:#80838a;font-size:11px;line-height:1.55;max-width:390px}
 .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.project-card{position:relative;min-height:220px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:#0a0d10;transition:.35s}
+.project-card{position:relative;min-height:275px;padding:18px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:#0a0d10;transition:.35s}
 .project-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 25%,rgba(184,255,44,.17),transparent 35%),linear-gradient(180deg,transparent 20%,rgba(0,0,0,.88))}
 .project-card.p02:before{background:radial-gradient(circle at 80% 25%,rgba(154,103,255,.2),transparent 35%),linear-gradient(180deg,transparent 20%,rgba(0,0,0,.9))}
 .project-card.p03:before{background:radial-gradient(circle at 80% 25%,rgba(50,170,255,.15),transparent 35%),linear-gradient(180deg,transparent 20%,rgba(0,0,0,.9))}
 .project-card>*{position:relative;z-index:2}.project-card:hover{transform:translateY(-5px);border-color:rgba(184,255,44,.5)}
 .project-type{color:var(--lime);font:8px "DM Mono",monospace}.project-card small{color:#6c7076;font:9px "DM Mono",monospace}
-.project-card h3{font-size:22px;margin:7px 0 5px;letter-spacing:-.05em}.project-card p{color:#a4a7ad;font-size:10px;margin:0;max-width:270px}
+.project-card h3{font-size:22px;margin:7px 0 5px;letter-spacing:-.05em}.project-card p{color:#a4a7ad;font-size:10px;margin:0;max-width:300px;line-height:1.55}
+.project-tech{display:block;color:#777b82;font:8px "DM Mono",monospace;margin-top:13px;line-height:1.5}
+.project-links{display:flex;gap:8px;align-items:center;align-self:flex-end}
+.project-links a{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 10px;border:1px solid rgba(255,255,255,.16);border-radius:999px;color:#aeb1b7;font:8px "DM Mono",monospace;transition:.25s}
+.project-links a:hover{color:#050505;background:var(--lime);border-color:var(--lime)}
 .project-card>a{align-self:flex-end;width:31px;height:31px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.2);border-radius:50%}
 .simple-section{padding-top:55px}
 .large-heading{display:flex;align-items:baseline;justify-content:space-between;gap:30px;margin:10px 0 38px}
