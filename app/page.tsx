@@ -115,6 +115,7 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#skills">Skills</a>
+          <a href="#github">GitHub</a>
           <a href="#contact">Contact</a>
         </nav>
 
@@ -336,8 +337,8 @@ export default function Home() {
 
       <section className="section section--lab">
         <div className="section__head">
-          <SectionLabel>04 / LAB MODE</SectionLabel>
-          <div className="section__count">[04]</div>
+          <SectionLabel>05 / LAB MODE</SectionLabel>
+          <div className="section__count">[05]</div>
         </div>
 
         <CyberLab />
@@ -346,7 +347,7 @@ export default function Home() {
       <section className="section section--contact" id="contact">
         <div className="contact-card">
           <div className="contact-card__orb" />
-          <SectionLabel>05 / CONTACT</SectionLabel>
+          <SectionLabel>06 / CONTACT</SectionLabel>
           <h2 className="display">
             Let&apos;s build something
             <br />
