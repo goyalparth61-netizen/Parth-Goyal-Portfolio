@@ -407,6 +407,15 @@ button,a{-webkit-tap-highlight-color:transparent}
   .ref-hero__copy{width:53vw}.ref-terminal{width:330px}.ref-status{width:330px}.ref-network{right:5%;transform:scale(.9);transform-origin:right center}
 }
 @media(max-width:900px){
+  .contact-section > .contact-layout{
+    grid-template-columns:1fr;
+    gap:45px;
+  }
+  .contact-section > .contact-layout > .contact-layout{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
   .site-nav{grid-template-columns:1fr auto;height:68px}.site-nav nav{display:none}
   .ref-hero{height:auto;min-height:930px}.ref-hero__copy{position:relative;left:auto;top:auto;width:auto;padding:125px 24px 0}
   .ref-hero__art{background-position:center}
