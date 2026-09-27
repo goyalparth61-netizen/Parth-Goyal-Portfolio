@@ -4,6 +4,15 @@ export function env(name: string, fallback = "") {
   return process.env[name] ?? fallback;
 }
 
+export function escapeHtml(value: string) {
+  return value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
 export async function insertRow(table: string, row: Record<string, unknown>) {
   const url = env("SUPABASE_URL");
   const key = env("SUPABASE_SERVICE_ROLE_KEY");
