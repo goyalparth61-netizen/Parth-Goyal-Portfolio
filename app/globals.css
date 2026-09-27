@@ -716,3 +716,58 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .admin-item p { margin: 8px 0 0; color: #777; line-height: 1.55; font-size: 12px; white-space: pre-wrap; }
 .admin-empty { padding: 24px 16px; color: #555; }
 @media (max-width: 850px) { .admin-grid { grid-template-columns: 1fr; } .admin-card--wide { grid-column: auto; } .admin-login form { flex-direction: column; } }
+
+/* 3D hero system */
+.hero-3d {
+  position: absolute;
+  z-index: 1;
+  inset: 5vh 1vw 0 39vw;
+  pointer-events: none;
+  opacity: .96;
+}
+.hero-3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+.hero-3d__vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 55% 45%, transparent 0 26%, rgba(7,7,7,.08) 48%, rgba(7,7,7,.88) 100%),
+    linear-gradient(90deg, rgba(7,7,7,.98) 0%, rgba(7,7,7,.18) 42%, transparent 72%);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 1px;
+  top: 16%;
+  bottom: 11%;
+  right: 34%;
+  background: linear-gradient(to bottom, transparent, rgba(183,255,60,.18), transparent);
+}
+.hero__content, .hero__terminal, .scroll-hint { will-change: transform; }
+
+@media (max-width: 980px) {
+  .hero-3d { inset: 28vh -9vw 4vh 26vw; opacity: .7; }
+  .hero-3d__vignette {
+    background:
+      radial-gradient(circle at 62% 44%, transparent 0 27%, rgba(7,7,7,.36) 57%, rgba(7,7,7,.96) 90%),
+      linear-gradient(90deg, rgba(7,7,7,.82), transparent 75%);
+  }
+  .hero::before { display: none; }
+}
+
+@media (max-width: 640px) {
+  .hero-3d { inset: 44vh -23vw 12vh 12vw; opacity: .48; }
+  .hero-3d__vignette {
+    background: radial-gradient(circle at 55% 44%, transparent 0 23%, rgba(7,7,7,.34) 55%, rgba(7,7,7,.95) 86%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-3d { opacity: .35; }
+  .hero__grid, .hero__terminal, .reveal { animation: none !important; }
+  .ai-fab:hover, .button:hover, .project:hover { transform: none; }
+}
