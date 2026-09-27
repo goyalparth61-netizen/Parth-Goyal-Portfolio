@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { insertRow, sendEmail } from "@/lib/server";
+import { escapeHtml, insertRow, sendEmail } from "@/lib/server";
 
 function clean(value: unknown, max = 2000) {
   return String(value ?? "").trim().slice(0, max);
@@ -37,11 +37,11 @@ export async function POST(request: Request) {
       replyTo: email,
       html: `
         <h2>New portfolio message</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Subject:</b> ${subject}</p>
+        <p><b>Name:</b> ${escapeHtml(name)}</p>
+        <p><b>Email:</b> ${escapeHtml(email)}</p>
+        <p><b>Subject:</b> ${escapeHtml(subject)}</p>
         <p><b>Message:</b></p>
-        <p>${message.replace(/\n/g, "<br />")}</p>
+        <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
       `,
     });
 
