@@ -9,21 +9,29 @@ import ThemeToggle from "@/components/theme-toggle";
 const projects = [
   {
     n: "01",
-    type: "AI + Agriculture",
-    title: "AGRO-OPTIMA",
-    text: "Intelligent fertilizer optimization system using ML.",
+    type: "AI + THERMAL INTELLIGENCE",
+    title: "AGNITE",
+    text: "India-focused thermal intelligence using NASA FIRMS data, historical analysis, explainable classification and recurrence prediction.",
+    tech: "React · TypeScript · NASA FIRMS · Leaflet",
+    github: "https://github.com/goyalparth61-netizen/Agnite",
   },
   {
     n: "02",
-    type: "Cyber Security",
+    type: "AI SECURITY",
     title: "ZeroTrace",
-    text: "Privacy-focused digital footprint analyzer.",
+    text: "AI-agent evaluation and reliability engine for adversarial testing, trace analysis, failure detection and reliability evidence.",
+    tech: "AI Agents · Evaluation · Reliability",
+    github: "https://github.com/archisharma158-cmd/ZeroTrace",
+    live: "https://zero-trace-nine.vercel.app/",
   },
   {
     n: "03",
-    type: "Full-Stack",
-    title: "Portfolio Website",
-    text: "A modern, animated portfolio with an AI assistant.",
+    type: "ML + CYBER SECURITY",
+    title: "ProSpy",
+    text: "Neural-network system that classifies social-media profiles as fake or genuine from profile attributes.",
+    tech: "Python · TensorFlow · Keras · Scikit-learn",
+    github: "https://github.com/archisharma158-cmd/ProSpy_Fake_Account_Detector",
+    live: "https://pro-spy-fake-account-detector.vercel.app/detect",
   },
 ];
 
@@ -46,7 +54,7 @@ export default function Home() {
         </nav>
 
         <div className="nav-actions">
-          <a className="resume-link" href="/resume">RESUME <ArrowUpRight size={14}/></a>
+          <a className="resume-link" href="#contact">RESUME <ArrowUpRight size={14}/></a>
           <ThemeToggle />
         </div>
       </header>
@@ -142,14 +150,22 @@ export default function Home() {
         <div className="section-intro">
           <h2>FEATURED<br/><em>PROJECTS</em></h2>
           <p>A selection of cybersecurity, AI and full-stack work built while learning, experimenting and shipping.</p>
-          <a className="outline-button" href="#contact">View All Projects <ArrowUpRight size={15}/></a>
+          <a className="outline-button" href="https://github.com/goyalparth61-netizen" target="_blank" rel="noreferrer">View GitHub <ArrowUpRight size={15}/></a>
         </div>
         <div className="project-grid">
           {projects.map((p) => (
             <article className={"project-card p"+p.n} key={p.n}>
               <span className="project-type">{p.type}</span>
-              <div><small>{p.n}</small><h3>{p.title}</h3><p>{p.text}</p></div>
-              <a href="#contact" aria-label={"Open "+p.title}><ArrowUpRight size={18}/></a>
+              <div>
+                <small>{p.n}</small>
+                <h3>{p.title}</h3>
+                <p>{p.text}</p>
+                <span className="project-tech">{p.tech}</span>
+              </div>
+              <div className="project-links">
+                <a href={p.github} target="_blank" rel="noreferrer">GITHUB <ArrowUpRight size={13}/></a>
+                {p.live && <a href={p.live} target="_blank" rel="noreferrer">LIVE <ArrowUpRight size={13}/></a>}
+              </div>
             </article>
           ))}
         </div>
@@ -176,7 +192,8 @@ export default function Home() {
         <SectionNo no="05"/>
         <div className="large-heading"><span>GITHUB</span><em>CODE LEAVES A TRACE.</em></div>
         <div className="github-card">
-          <Github size={28}/><div><strong>goyalparth61-netizen</strong><span>Public projects · experiments · continuous learning</span></div>
+          <Github size={28}/>
+          <div><strong>goyalparth61-netizen</strong><span>5+ projects · experiments · continuous learning</span></div>
           <a href="https://github.com/goyalparth61-netizen" target="_blank" rel="noreferrer"><ArrowUpRight/></a>
         </div>
       </section>
