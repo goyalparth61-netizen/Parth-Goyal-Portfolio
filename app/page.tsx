@@ -7,6 +7,8 @@ import SmoothScroll from "@/components/smooth-scroll";
 import SectionReveal from "@/components/section-reveal";
 import CursorField from "@/components/cursor-field";
 import IntroLoader from "@/components/intro-loader";
+import ScrollProgress from "@/components/scroll-progress";
+import InteractiveProject from "@/components/interactive-project";
 import GitHubLive from "@/components/github-live";
 import CyberLab from "@/components/cyber-lab";
 
@@ -105,6 +107,7 @@ export default function Home() {
       <SmoothScroll />
       <SectionReveal />
       <IntroLoader />
+      <ScrollProgress />
       <CursorField />
       <div className="noise" />
 
@@ -259,24 +262,15 @@ export default function Home() {
 
         <div className="project-list">
           {projects.map((project) => (
-            <a
-              className="project"
-              href={project.link}
+            <InteractiveProject
               key={project.title}
-            >
-              <div className="project__index">{project.index}</div>
-              <div className="project__main">
-                <span className="project__type">{project.type}</span>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <div className="project__tags">
-                  {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
-                </div>
-              </div>
-              <div className="project__arrow">
-                <ExternalLink size={19} />
-              </div>
-            </a>
+              href={project.link}
+              index={project.index}
+              type={project.type}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+            />
           ))}
         </div>
       </section>
