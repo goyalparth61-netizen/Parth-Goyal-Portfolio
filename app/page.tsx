@@ -327,14 +327,15 @@ export default function Home() {
             <em>worth shipping.</em>
           </h2>
           <p>
-            For collaborations, project discussions, internships, or
-            technical conversations.
+            Send a message, connect socially, or request a call. Messages
+            submitted here are routed to Parth&apos;s inbox.
           </p>
-          <a className="button button--primary" href="mailto:goyalparth61@gmail.com">
-            <Mail size={17} /> get in touch
-          </a>
+
+          <ContactPanel />
         </div>
       </section>
+
+      <AIAssistant />
 
       <footer className="footer">
         <div>PARTH GOYAL © {new Date().getFullYear()}</div>
