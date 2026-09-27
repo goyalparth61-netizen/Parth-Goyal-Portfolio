@@ -771,3 +771,24 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero__grid, .hero__terminal, .reveal { animation: none !important; }
   .ai-fab:hover, .button:hover, .project:hover { transform: none; }
 }
+
+:root { --mx: 50vw; --my: 45vh; }
+.cursor-field {
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx) var(--my),
+    rgba(183,255,60,.045),
+    rgba(183,255,60,.012) 28%,
+    transparent 65%
+  );
+  mix-blend-mode: screen;
+}
+@media (max-width: 640px) {
+  .cursor-field { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cursor-field { display: none; }
+}
