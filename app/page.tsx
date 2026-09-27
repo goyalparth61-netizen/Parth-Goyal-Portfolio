@@ -12,6 +12,8 @@ import InteractiveProject from "@/components/interactive-project";
 import GitHubLive from "@/components/github-live";
 import CyberLab from "@/components/cyber-lab";
 import SkillOrbit from "@/components/skill-orbit";
+import JourneyTimeline from "@/components/journey-timeline";
+import CommandBar from "@/components/command-bar";
 import MobileNav from "@/components/mobile-nav";
 import ActivityHeatmap from "@/components/activity-heatmap";
 
@@ -98,6 +100,7 @@ export default function Home() {
       <SectionReveal />
       <IntroLoader />
       <ScrollProgress />
+      <CommandBar />
       <CursorField />
       <div className="noise" />
 
@@ -110,6 +113,7 @@ export default function Home() {
           <a href="#about">About</a>
           <a href="#work">Work</a>
           <a href="#skills">Skills</a>
+          <a href="#journey">Journey</a>
           <a href="#github">GitHub</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -233,10 +237,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section section--journey" id="journey">
+        <div className="section__head">
+          <SectionLabel>02 / JOURNEY</SectionLabel>
+          <div className="section__count">[02]</div>
+        </div>
+
+        <div className="journey-intro">
+          <div>
+            <h2 className="display display--compact">
+              The path so far.
+              <br />
+              <em>Still in motion.</em>
+            </h2>
+          </div>
+          <p>
+            Education, technical direction, and the foundation behind Parth&apos;s
+            current cybersecurity and AI-focused work.
+          </p>
+        </div>
+
+        <JourneyTimeline />
+      </section>
+
       <section className="section section--work" id="work">
         <div className="section__head">
-          <SectionLabel>02 / SELECTED WORK</SectionLabel>
-          <div className="section__count">[02]</div>
+          <SectionLabel>03 / SELECTED WORK</SectionLabel>
+          <div className="section__count">[03]</div>
         </div>
 
         <div className="work-intro">
@@ -268,8 +295,8 @@ export default function Home() {
 
       <section className="section section--skills" id="skills">
         <div className="section__head">
-          <SectionLabel>03 / TOOLKIT</SectionLabel>
-          <div className="section__count">[03]</div>
+          <SectionLabel>04 / TOOLKIT</SectionLabel>
+          <div className="section__count">[04]</div>
         </div>
 
         <div className="skills-grid">
@@ -300,8 +327,8 @@ export default function Home() {
 
       <section className="section section--github" id="github">
         <div className="section__head">
-          <SectionLabel>04 / GITHUB SIGNAL</SectionLabel>
-          <div className="section__count">[04]</div>
+          <SectionLabel>05 / GITHUB SIGNAL</SectionLabel>
+          <div className="section__count">[05]</div>
         </div>
 
         <div className="github-intro">
@@ -322,10 +349,10 @@ export default function Home() {
         <ActivityHeatmap />
       </section>
 
-      <section className="section section--lab">
+      <section className="section section--lab" id="lab">
         <div className="section__head">
-          <SectionLabel>05 / LAB MODE</SectionLabel>
-          <div className="section__count">[05]</div>
+          <SectionLabel>06 / LAB MODE</SectionLabel>
+          <div className="section__count">[06]</div>
         </div>
 
         <CyberLab />
@@ -334,7 +361,7 @@ export default function Home() {
       <section className="section section--contact" id="contact">
         <div className="contact-card">
           <div className="contact-card__orb" />
-          <SectionLabel>06 / CONTACT</SectionLabel>
+          <SectionLabel>07 / CONTACT</SectionLabel>
           <h2 className="display">
             Let&apos;s build something
             <br />
