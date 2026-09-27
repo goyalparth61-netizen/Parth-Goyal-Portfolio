@@ -265,6 +265,133 @@ button,a{-webkit-tap-highlight-color:transparent}
 .contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:8vw;align-items:start}.contact-layout>div>p{max-width:430px;color:#85888e;font-size:13px;line-height:1.6}.socials{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.socials a{display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid var(--line);font:9px "DM Mono",monospace}.socials svg{width:14px}
 .ref-footer{min-height:80px;padding:0 3.5vw;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);color:#666a70;font:9px "DM Mono",monospace}
 
+/* CONTACT PANEL — reference-first repair */
+.contact-section > .contact-layout{
+  grid-template-columns:minmax(0,1fr) minmax(520px,1.05fr);
+  gap:clamp(55px,8vw,125px);
+  align-items:start;
+}
+.contact-section > .contact-layout > .contact-layout{
+  display:grid;
+  grid-template-columns:minmax(190px,.72fr) minmax(300px,1.28fr);
+  gap:clamp(28px,4vw,64px);
+  align-items:start;
+  width:100%;
+}
+.contact-info{min-width:0}
+.contact-links{display:grid;gap:0;border-top:1px solid var(--line)}
+.contact-links>a,.booking-link{
+  display:grid;
+  grid-template-columns:20px 1fr 16px;
+  gap:10px;
+  align-items:center;
+  min-height:58px;
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+  color:#d7d9dc;
+  transition:.25s;
+}
+.contact-links>a:hover,.booking-link:hover{color:var(--lime)}
+.contact-links svg,.booking-link svg{color:#8d9197}
+.contact-links span,.booking-link span{min-width:0;font:11px/1.35 "DM Mono",monospace}
+.contact-links small,.booking-link small{
+  display:block;
+  color:#777b82;
+  font:8px "DM Mono",monospace;
+  letter-spacing:.08em;
+  margin-bottom:4px;
+}
+.booking-link{margin-top:14px;border:1px solid var(--line);padding:13px 12px}
+.booking-link--disabled{opacity:.55}
+.contact-form-wrap{
+  min-width:0;
+  padding:20px;
+  border:1px solid rgba(255,255,255,.13);
+  background:rgba(9,11,14,.72);
+  box-shadow:0 20px 60px rgba(0,0,0,.22);
+}
+.contact-tabs{
+  display:flex;
+  margin-bottom:22px;
+  border-bottom:1px solid var(--line);
+}
+.contact-tabs button{
+  appearance:none;
+  border:0;
+  border-bottom:1px solid transparent;
+  background:transparent;
+  color:#74787f;
+  padding:0 0 12px;
+  margin-right:22px;
+  cursor:pointer;
+  font:9px "DM Mono",monospace;
+  letter-spacing:.08em;
+}
+.contact-tabs button.active{
+  color:var(--lime);
+  border-bottom-color:var(--lime);
+}
+.contact-form{display:grid;gap:17px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.contact-form label{
+  display:grid;
+  gap:7px;
+  color:#8d9197;
+  font:8px "DM Mono",monospace;
+  letter-spacing:.08em;
+}
+.contact-form input,.contact-form textarea{
+  width:100%;
+  min-width:0;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:0;
+  outline:0;
+  background:#06080b!important;
+  color:#eceee9!important;
+  padding:12px 12px;
+  font:11px "DM Mono",monospace;
+  transition:.2s;
+}
+.contact-form input{height:42px}
+.contact-form textarea{min-height:145px;resize:vertical}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#4f535a}
+.contact-form input:focus,.contact-form textarea:focus{
+  border-color:rgba(184,255,44,.55)!important;
+  box-shadow:0 0 0 2px rgba(184,255,44,.06);
+}
+.form-submit,.form-success button{
+  width:max-content;
+  min-height:40px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0 15px;
+  border:1px solid var(--lime);
+  background:var(--lime);
+  color:#050505;
+  cursor:pointer;
+  font:9px "DM Mono",monospace;
+  letter-spacing:.04em;
+  transition:.25s;
+}
+.form-submit:hover,.form-success button:hover{transform:translateY(-2px)}
+.form-submit:disabled{opacity:.55;cursor:wait}
+.form-error{margin:0!important;color:#ff6b7a!important;font:9px "DM Mono",monospace!important}
+.form-note{margin:0!important;color:#666a71!important;font:8px/1.5 "DM Mono",monospace!important}
+.form-success{
+  min-height:300px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:center;
+}
+.form-success svg{color:var(--lime)}
+.form-success h3{margin:18px 0 7px;font-size:22px}
+.form-success p{margin:0 0 18px;color:#85888e;font-size:11px;line-height:1.5}
+.spin{animation:spinIcon .8s linear infinite}
+@keyframes spinIcon{to{transform:rotate(360deg)}}
+
 /* Keep existing contact/AI widgets inside the new visual system */
 .contact-layout .contact-panel,.contact-layout form{max-width:100%!important}
 .contact-layout input,.contact-layout textarea,.contact-layout select{background:#080a0d!important;border-color:rgba(255,255,255,.14)!important;color:#eee!important}
