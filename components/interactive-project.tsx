@@ -46,6 +46,11 @@ export default function InteractiveProject({
       onMouseLeave={leave}
     >
       <div className="project__glare" />
+      <div className="project__cursor-preview">
+        <span>{index}</span>
+        <strong>{title}</strong>
+        <small>{type}</small>
+      </div>
       <div className="project__index">{index}</div>
       <div className="project__main">
         <span className="project__type">{type}</span>
