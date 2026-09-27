@@ -17,6 +17,7 @@ import CommandBar from "@/components/command-bar";
 import MobileNav from "@/components/mobile-nav";
 import HeroHud from "@/components/hero-hud";
 import HeroMetrics from "@/components/hero-metrics";
+import CyberMarquee from "@/components/cyber-marquee";
 import ActivityHeatmap from "@/components/activity-heatmap";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
@@ -189,6 +190,8 @@ export default function Home() {
           <ChevronDown size={18} />
         </a>
       </section>
+
+      <CyberMarquee />
 
       <section className="section section--intro" id="about">
         <div className="section__head">
