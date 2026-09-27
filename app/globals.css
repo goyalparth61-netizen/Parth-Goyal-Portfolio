@@ -1129,3 +1129,65 @@ button, a { -webkit-tap-highlight-color: transparent; }
   from { opacity: 0; transform: translateY(8px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Scroll progress */
+:root { --scroll-progress: 0%; }
+.scroll-progress {
+  position: fixed;
+  z-index: 95;
+  top: 0;
+  left: 0;
+  width: var(--scroll-progress);
+  height: 2px;
+  background: var(--accent);
+  box-shadow: 0 0 16px rgba(183,255,60,.7);
+  transition: width .08s linear;
+}
+
+/* 3D project list interaction */
+.project--interactive {
+  --rx: 0deg;
+  --ry: 0deg;
+  --gx: 50%;
+  --gy: 50%;
+  isolation: isolate;
+  transform: perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry));
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: transform .25s ease, background .35s ease, padding .35s ease;
+}
+.project--interactive .project__main,
+.project--interactive .project__index,
+.project--interactive .project__arrow {
+  position: relative;
+  z-index: 2;
+  transform: translateZ(18px);
+}
+.project__glare {
+  position: absolute;
+  inset: -20%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(circle at var(--gx) var(--gy), rgba(183,255,60,.12), transparent 29%);
+  transition: opacity .25s ease;
+}
+.project--interactive:hover .project__glare { opacity: 1; }
+.project--interactive:hover {
+  transform: perspective(1100px) rotateX(var(--rx)) rotateY(var(--ry)) translateY(-2px);
+}
+.project--interactive .project__arrow {
+  font: 23px "DM Mono", monospace;
+}
+@media (max-width: 720px) {
+  .project--interactive {
+    transform: none !important;
+  }
+  .project__glare { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project--interactive,
+  .project--interactive:hover {
+    transform: none !important;
+  }
+}
