@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Check, Github } from "lucide-react";
 import { notFound } from "next/navigation";
 import { projectMap, projects } from "@/lib/projects";
+import ProjectVisual from "@/components/project-visual";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -32,6 +33,7 @@ export default async function ProjectPage({
         <p className="case-study__eyebrow">{project.eyebrow}</p>
         <h1>{project.title}</h1>
         <p className="case-study__description">{project.description}</p>
+        <ProjectVisual accent={project.accent} index={project.index} />
 
         <div className="case-study__actions">
           <a
