@@ -6,6 +6,8 @@ import ContactPanel from "@/components/contact-panel";
 import SmoothScroll from "@/components/smooth-scroll";
 import SectionReveal from "@/components/section-reveal";
 import CursorField from "@/components/cursor-field";
+import GitHubLive from "@/components/github-live";
+import CyberLab from "@/components/cyber-lab";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
   ssr: false,
@@ -309,25 +311,36 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section section--github" id="github">
+        <div className="section__head">
+          <SectionLabel>04 / GITHUB SIGNAL</SectionLabel>
+          <div className="section__count">[04]</div>
+        </div>
+
+        <div className="github-intro">
+          <div>
+            <h2 className="display display--compact">
+              Code leaves
+              <br />
+              <em>a trace.</em>
+            </h2>
+          </div>
+          <p>
+            Live public repository and activity signals from Parth&apos;s
+            GitHub profile, rendered directly from the GitHub API.
+          </p>
+        </div>
+
+        <GitHubLive />
+      </section>
+
       <section className="section section--lab">
         <div className="section__head">
           <SectionLabel>04 / LAB MODE</SectionLabel>
           <div className="section__count">[04]</div>
         </div>
 
-        <div className="lab-panel">
-          <div className="lab-panel__glow" />
-          <div className="lab-panel__icon"><Terminal size={28} /></div>
-          <div>
-            <span className="project__type">INTERACTIVE LAYER</span>
-            <h2>Parth&apos;s Cyber Lab</h2>
-            <p>
-              A dedicated space for security demos, technical experiments,
-              write-ups, and interactive challenges.
-            </p>
-          </div>
-          <span className="lab-panel__soon">COMING NEXT</span>
-        </div>
+        <CyberLab />
       </section>
 
       <section className="section section--contact" id="contact">
