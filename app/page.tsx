@@ -19,6 +19,7 @@ import HeroHud from "@/components/hero-hud";
 import HeroMetrics from "@/components/hero-metrics";
 import CyberMarquee from "@/components/cyber-marquee";
 import ThemeToggle from "@/components/theme-toggle";
+import HeroNetwork from "@/components/hero-network";
 import ActivityHeatmap from "@/components/activity-heatmap";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
@@ -142,6 +143,7 @@ export default function Home() {
         />
         <Hero3D />
         <HeroHud />
+        <HeroNetwork />
 
         <div className="hero__content">
           <div className="eyebrow reveal">
