@@ -2575,3 +2575,62 @@ body {
     display: none;
   }
 }
+
+/* Cinematic signal marquee */
+.cyber-marquee {
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  border-top: 1px solid rgba(255,255,255,.055);
+  border-bottom: 1px solid rgba(255,255,255,.055);
+  background:
+    linear-gradient(90deg, rgba(184,255,44,.025), transparent 20%, transparent 80%, rgba(138,108,255,.025)),
+    #060609;
+}
+.cyber-marquee::before,
+.cyber-marquee::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 9vw;
+  pointer-events: none;
+}
+.cyber-marquee::before {
+  left: 0;
+  background: linear-gradient(90deg, #060609, transparent);
+}
+.cyber-marquee::after {
+  right: 0;
+  background: linear-gradient(270deg, #060609, transparent);
+}
+.cyber-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: signalMarquee 26s linear infinite;
+}
+.cyber-marquee span {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 24px;
+  color: #5f6167;
+  font: 9px "DM Mono", monospace;
+  letter-spacing: .12em;
+  white-space: nowrap;
+}
+.cyber-marquee span i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px rgba(184,255,44,.55);
+}
+@keyframes signalMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cyber-marquee__track { animation: none; }
+}
