@@ -5,6 +5,7 @@ import AIAssistant from "@/components/ai-assistant";
 import ContactPanel from "@/components/contact-panel";
 import SmoothScroll from "@/components/smooth-scroll";
 import SectionReveal from "@/components/section-reveal";
+import CursorField from "@/components/cursor-field";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
   ssr: false,
@@ -100,6 +101,7 @@ export default function Home() {
     <main>
       <SmoothScroll />
       <SectionReveal />
+      <CursorField />
       <div className="noise" />
 
       <header className="nav">
