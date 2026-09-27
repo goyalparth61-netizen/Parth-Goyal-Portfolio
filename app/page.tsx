@@ -134,9 +134,13 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero__grid" />
+        <img
+          className="hero__avatar"
+          src="https://avatars.githubusercontent.com/u/229990387?v=4"
+          alt=""
+          aria-hidden="true"
+        />
         <Hero3D />
-        <div className="hero__orb hero__orb--one" />
-        <div className="hero__orb hero__orb--two" />
 
         <div className="hero__content">
           <div className="eyebrow reveal">
@@ -145,9 +149,8 @@ export default function Home() {
           </div>
 
           <h1 className="hero__title reveal reveal--delay-1">
-            PARTH
-            <br />
-            <span>GOYAL</span>
+            <span className="hero__title-solid">PARTH</span>
+            <span className="hero__title-outline">GOYAL</span>
           </h1>
 
           <p className="hero__copy reveal reveal--delay-2">
@@ -177,13 +180,10 @@ export default function Home() {
             <span>parth@secure-lab</span>
           </div>
           <div className="terminal__body">
-            <p><b>01</b> <span>$ whoami</span></p>
-            <p className="terminal__accent">aspiring-cybersecurity-professional</p>
-            <p><b>02</b> <span>$ focus --list</span></p>
-            <p className="terminal__dim">network-security · ethical-hacking · ai</p>
-            <p><b>03</b> <span>$ status</span></p>
-            <p className="terminal__success">● building / learning / shipping</p>
-            <p><b>04</b> <span>$ _</span><span className="cursor" /></p>
+            <p><b>01</b> $ whoami</p>
+            <p className="terminal__accent">cybersecurity · ai · full-stack</p>
+            <p><b>02</b> $ status <span className="terminal__success">● online</span></p>
+            <p><b>03</b> $ _<span className="cursor" /></p>
           </div>
         </div>
 
