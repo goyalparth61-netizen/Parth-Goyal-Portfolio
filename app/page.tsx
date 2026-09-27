@@ -1,7 +1,7 @@
+"use client";
+
 import AIAssistant from "@/components/ai-assistant";
 import ContactPanel from "@/components/contact-panel";
-
-"use client";
 
 import {
   ArrowUpRight,
