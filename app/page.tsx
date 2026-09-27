@@ -29,7 +29,6 @@ import {
   Network,
   Sparkles,
   ChevronDown,
-  ExternalLink,
 } from "lucide-react";
 
 const projects = [
@@ -80,18 +79,6 @@ const projects = [
   },
 ];
 
-const skills = [
-  "Cybersecurity",
-  "Network Security",
-  "Ethical Hacking",
-  "Python",
-  "C / C++",
-  "HTML / CSS",
-  "Git & GitHub",
-  "Kali Linux",
-  "Nmap",
-  "AI & ML",
-];
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
