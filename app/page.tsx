@@ -11,6 +11,7 @@ import ScrollProgress from "@/components/scroll-progress";
 import InteractiveProject from "@/components/interactive-project";
 import GitHubLive from "@/components/github-live";
 import CyberLab from "@/components/cyber-lab";
+import SkillOrbit from "@/components/skill-orbit";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
   ssr: false,
@@ -294,12 +295,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="skills-cloud">
-            {skills.map((skill, index) => (
-              <span key={skill} style={{ "--i": index } as React.CSSProperties}>
-                {skill}
-              </span>
-            ))}
+          <div className="skills-visual">
+            <SkillOrbit />
           </div>
         </div>
 
