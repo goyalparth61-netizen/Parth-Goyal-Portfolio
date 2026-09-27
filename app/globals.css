@@ -73,6 +73,86 @@ button,a{-webkit-tap-highlight-color:transparent}
 .ref-kicker b{color:#777;font-weight:400}
 .ref-hero h1{margin:0;font-size:clamp(92px,9.7vw,154px);line-height:.76;letter-spacing:-.1em;font-weight:800}
 .ref-hero h1 span,.ref-hero h1 em{display:block;font-style:normal}
+
+/* CINEMATIC GLITCH TYPE */
+.glitch-title{
+  position:relative;
+  isolation:isolate;
+  will-change:transform,filter;
+}
+.glitch-title::before,
+.glitch-title::after{
+  content:attr(data-text);
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  opacity:0;
+  z-index:-1;
+}
+.glitch-solid::before{
+  color:#b8ff2c;
+  -webkit-text-stroke:0;
+  clip-path:inset(7% 0 76% 0);
+  animation:glitchGreen 6s steps(1,end) infinite;
+}
+.glitch-solid::after{
+  color:#a96cff;
+  -webkit-text-stroke:0;
+  clip-path:inset(64% 0 17% 0);
+  animation:glitchPurple 6s steps(1,end) infinite;
+}
+.glitch-outline::before{
+  color:#b8ff2c;
+  -webkit-text-stroke:1px #b8ff2c;
+  clip-path:inset(18% 0 60% 0);
+  animation:glitchOutlineGreen 6s steps(1,end) infinite;
+}
+.glitch-outline::after{
+  color:#a96cff;
+  -webkit-text-stroke:1px #a96cff;
+  clip-path:inset(69% 0 8% 0);
+  animation:glitchOutlinePurple 6s steps(1,end) infinite;
+}
+.glitch-title{
+  animation:glitchMain 6s steps(1,end) infinite;
+}
+.glitch-title::selection{background:var(--lime);color:#000}
+
+@keyframes glitchMain{
+  0%,72%,74%,91%,100%{transform:translate3d(0,0,0);filter:none}
+  72.2%{transform:translate3d(-2px,0,0);filter:skewX(-1deg)}
+  72.6%{transform:translate3d(3px,0,0);filter:skewX(1.5deg)}
+  73%{transform:translate3d(-1px,0,0)}
+  73.5%{transform:translate3d(0,0,0)}
+  91.2%{transform:translate3d(2px,0,0);filter:skewX(.8deg)}
+  91.7%{transform:translate3d(-3px,0,0);filter:skewX(-1deg)}
+  92.2%{transform:translate3d(0,0,0)}
+}
+@keyframes glitchGreen{
+  0%,71.8%,73.8%,100%{opacity:0;transform:translateX(0)}
+  72%{opacity:.9;transform:translateX(-7px)}
+  72.4%{opacity:.35;transform:translateX(9px)}
+  72.9%{opacity:0}
+}
+@keyframes glitchPurple{
+  0%,72.4%,74.2%,100%{opacity:0;transform:translateX(0)}
+  72.6%{opacity:.85;transform:translateX(8px)}
+  73%{opacity:.3;transform:translateX(-10px)}
+  73.4%{opacity:0}
+}
+@keyframes glitchOutlineGreen{
+  0%,90.8%,92.6%,100%{opacity:0;transform:translateX(0)}
+  91%{opacity:.9;transform:translateX(-8px)}
+  91.5%{opacity:.35;transform:translateX(10px)}
+  92%{opacity:0}
+}
+@keyframes glitchOutlinePurple{
+  0%,91.1%,93%,100%{opacity:0;transform:translateX(0)}
+  91.3%{opacity:.8;transform:translateX(8px)}
+  91.8%{opacity:.3;transform:translateX(-9px)}
+  92.4%{opacity:0}
+}
 .ref-hero h1 span{color:#f5f5f0;text-shadow:0 0 30px rgba(184,255,44,.08)}
 .ref-hero h1 em{color:transparent;-webkit-text-stroke:1.2px rgba(245,245,240,.72)}
 .ref-hero__copy>p{
