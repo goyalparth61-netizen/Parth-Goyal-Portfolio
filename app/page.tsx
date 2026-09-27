@@ -16,6 +16,7 @@ import JourneyTimeline from "@/components/journey-timeline";
 import CommandBar from "@/components/command-bar";
 import MobileNav from "@/components/mobile-nav";
 import HeroHud from "@/components/hero-hud";
+import HeroMetrics from "@/components/hero-metrics";
 import ActivityHeatmap from "@/components/activity-heatmap";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
@@ -127,6 +128,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero__grid" />
+        <div className="hero__city" aria-hidden="true" />
         <img
           className="hero__avatar"
           src="https://avatars.githubusercontent.com/u/229990387?v=4"
@@ -161,10 +163,11 @@ export default function Home() {
             </a>
           </div>
 
+          <HeroMetrics />
           <div className="hero__meta reveal reveal--delay-4">
             <span>02ND YEAR B.TECH</span>
             <span>QUANTUM UNIVERSITY</span>
-            <span>ROORKEE, INDIA</span>
+            <span>CYBERSECURITY / AI / FULL-STACK</span>
           </div>
         </div>
 
