@@ -27,8 +27,8 @@ export default function HeroHud() {
           <b>READY</b>
         </div>
         <div className="hero-hud__coords">
-          <span>30.3165 N</span>
-          <span>78.0322 E</span>
+          <span>PG / CYBER NODE</span>
+          <span>ENCRYPTED LINK</span>
         </div>
       </div>
       <div className="hero-hud__caption">
