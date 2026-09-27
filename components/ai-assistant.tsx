@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import { Bot, MessageCircle, Send, X, Loader2 } from "lucide-react";
+import { Bot, MessageCircle, Send, X, Loader2, Trash2, Sparkles } from "lucide-react";
 
 type ChatMessage = {
   role: "user" | "assistant";
@@ -74,16 +74,41 @@ export default function AIAssistant() {
       {open && (
         <section className="ai-panel" aria-label="Parth AI assistant">
           <div className="ai-panel__top">
-            <div>
-              <div className="ai-panel__identity">
-                <span className="ai-panel__dot" />
-                PARTH AI
+            <div className="ai-panel__brand">
+              <img
+                src="https://avatars.githubusercontent.com/u/229990387?v=4"
+                alt=""
+                className="ai-panel__avatar"
+              />
+              <div>
+                <div className="ai-panel__identity">
+                  <span className="ai-panel__dot" />
+                  PARTH AI
+                </div>
+                <small>Ask about projects, skills & Parth</small>
               </div>
-              <small>Portfolio intelligence layer</small>
             </div>
-            <button className="icon-button" onClick={() => setOpen(false)} aria-label="Close AI">
-              <X size={18} />
-            </button>
+            <div className="ai-panel__actions">
+              <button
+                className="icon-button"
+                onClick={() =>
+                  setMessages([
+                    {
+                      role: "assistant",
+                      content:
+                        "Hi — I’m Parth AI. Ask me about Parth’s projects, skills, cybersecurity work, or how to contact him.",
+                    },
+                  ])
+                }
+                aria-label="Clear chat"
+                title="Clear chat"
+              >
+                <Trash2 size={15} />
+              </button>
+              <button className="icon-button" onClick={() => setOpen(false)} aria-label="Close AI">
+                <X size={18} />
+              </button>
+            </div>
           </div>
 
           <div className="ai-panel__quick">
@@ -97,6 +122,11 @@ export default function AIAssistant() {
                 {prompt}
               </button>
             ))}
+          </div>
+
+          <div className="ai-panel__trust">
+            <Sparkles size={13} />
+            <span>Answers are grounded in verified portfolio data.</span>
           </div>
 
           <div className="ai-panel__messages">
