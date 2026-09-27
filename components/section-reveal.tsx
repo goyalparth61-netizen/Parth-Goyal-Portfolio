@@ -1,48 +1,28 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-if (typeof window !== "undefined") {
-  gsap.registerPlugin(ScrollTrigger);
-}
+import { useEffect } from "react";
 
 export default function SectionReveal() {
-  const ready = useRef(false);
+  useEffect(() => {
+    const sections = Array.from(document.querySelectorAll<HTMLElement>(".section"));
 
-  useLayoutEffect(() => {
-    if (ready.current) return;
-    ready.current = true;
+    sections.forEach((section) => section.classList.add("section-scroll-target"));
 
-    const ctx = gsap.context(() => {
-      const sections = Array.from(
-        document.querySelectorAll<HTMLElement>(".section")
-      );
-
-      sections.forEach((section) => {
-        const targets = section.querySelectorAll(".section-label, .display, .project, .skills-cloud span, .capability-row > div, .lab-panel, .contact-layout");
-
-        gsap.fromTo(
-          targets,
-          { y: 34, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            stagger: 0.045,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 78%",
-              once: true,
-            },
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
           }
-        );
-      });
-    });
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
 
-    return () => ctx.revert();
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
 
   return null;
