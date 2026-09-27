@@ -5,6 +5,7 @@ import { ArrowRight, Command, Search, X } from "lucide-react";
 
 const commands = [
   { label: "Jump to About", href: "#about", key: "A" },
+  { label: "Open journey", href: "#journey", key: "J" },
   { label: "View selected work", href: "#work", key: "W" },
   { label: "Open GitHub signal", href: "#github", key: "G" },
   { label: "Launch Cyber Lab", href: "#lab", key: "L" },
