@@ -1,9 +1,9 @@
 "use client";
 
 const metrics = [
-  { value: "05", label: "FEATURED BUILDS" },
-  { value: "10+", label: "TOOLS / SKILLS" },
-  { value: "01", label: "CYBER LAB" },
+  { value: "5+", label: "PROJECTS" },
+  { value: "10+", label: "TECHNOLOGIES" },
+  { value: "2+", label: "YEARS LEARNING" },
   { value: "∞", label: "CURIOSITY" },
 ];
 
