@@ -344,7 +344,7 @@ export default function Home() {
         <div>PARTH GOYAL © {new Date().getFullYear()}</div>
         <div className="footer__links">
           <a href="https://github.com/goyalparth61-netizen" target="_blank" rel="noreferrer"><Github size={16} /></a>
-          <a href="#" aria-label="LinkedIn"><Linkedin size={16} /></a>
+          <a href="https://in.linkedin.com/in/parth-goyal-215231385" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={16} /></a>
           <a href="mailto:goyalparth61@gmail.com"><Mail size={16} /></a>
         </div>
         <div className="footer__note"><Sparkles size={13} /> DESIGNED FOR THE WEB</div>
