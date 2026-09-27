@@ -67,8 +67,8 @@ export default function Home() {
           <div className="ref-kicker"><i /> CYBER SECURITY <b>×</b> AI <b>×</b> FULL-STACK</div>
 
           <h1>
-            <span>PARTH</span>
-            <em>GOYAL</em>
+            <span className="glitch-title glitch-solid" data-text="PARTH">PARTH</span>
+            <em className="glitch-title glitch-outline" data-text="GOYAL">GOYAL</em>
           </h1>
 
           <p>
