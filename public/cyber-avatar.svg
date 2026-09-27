@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 720" fill="none">
+<defs>
+ <linearGradient id="j" x1="130" y1="40" x2="420" y2="700" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#151824"/><stop offset=".55" stop-color="#05070B"/><stop offset="1" stop-color="#020306"/>
+ </linearGradient>
+ <linearGradient id="p" x1="90" y1="200" x2="430" y2="500" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#8A6CFF"/><stop offset=".55" stop-color="#3B2A88"/><stop offset="1" stop-color="#10151B"/>
+ </linearGradient>
+ <linearGradient id="g" x1="300" y1="170" x2="450" y2="500" gradientUnits="userSpaceOnUse">
+  <stop stop-color="#B8FF2C"/><stop offset="1" stop-color="#17351A"/>
+ </linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<ellipse cx="280" cy="365" rx="210" ry="330" fill="#080A10" opacity=".5"/>
+<!-- hair -->
+<path d="M158 165C145 93 202 36 290 45C372 53 414 105 391 176L348 213L315 176L272 198L236 174L195 202L160 188Z" fill="#07080D" stroke="#6E6B91" stroke-opacity=".55" stroke-width="3"/>
+<path d="M164 145C189 77 282 55 356 94C323 88 286 104 252 132C224 154 193 164 164 145Z" fill="#11131C"/>
+<!-- face -->
+<path d="M183 137C209 116 267 111 315 134L326 195C316 234 285 261 246 254C214 247 188 222 178 185Z" fill="#12151D" stroke="#8D8BA3" stroke-opacity=".45" stroke-width="2"/>
+<!-- eye -->
+<path d="M206 174Q225 163 243 174Q225 186 206 174Z" fill="#B8FF2C" filter="url(#glow)"/>
+<path d="M207 174Q225 170 241 174" stroke="#DFFF9A" stroke-width="2"/>
+<!-- neck -->
+<path d="M247 247L302 244L322 309L252 320Z" fill="#0B0D12"/>
+<!-- jacket -->
+<path d="M118 330Q165 282 250 290L315 300Q395 295 450 355L482 710H45L72 420Q76 365 118 330Z" fill="url(#j)" stroke="#57566B" stroke-opacity=".5" stroke-width="3"/>
+<!-- shoulder purple -->
+<path d="M83 381Q130 310 203 306L176 710H45Z" fill="url(#p)" opacity=".7"/>
+<path d="M318 304Q402 300 453 357L481 710H362Z" fill="#0A0E10" stroke="#A67CFF" stroke-opacity=".3" stroke-width="3"/>
+<!-- hood -->
+<path d="M174 292Q235 245 314 271Q352 286 381 337L340 364L287 316L226 344L171 330Z" fill="#11141B" stroke="#8A6CFF" stroke-opacity=".45" stroke-width="3"/>
+<!-- green rim -->
+<path d="M317 290Q369 294 404 333L374 390L335 351L319 319Z" fill="url(#g)" opacity=".9" filter="url(#glow)"/>
+<!-- straps -->
+<path d="M218 324L188 710M300 320L334 710" stroke="#343947" stroke-width="14"/>
+<path d="M217 324L188 710M300 320L334 710" stroke="#9B8AFF" stroke-opacity=".32" stroke-width="2"/>
+<!-- tech panels -->
+<path d="M100 442L161 421L157 504L92 527Z" fill="#0B0D14" stroke="#8A6CFF" stroke-opacity=".65"/>
+<path d="M373 418L431 439L438 516L381 496Z" fill="#0A0D10" stroke="#B8FF2C" stroke-opacity=".55"/>
+<path d="M114 463L145 452M111 477L143 466M397 442L425 451M399 457L427 466" stroke="#8A6CFF" stroke-width="3" opacity=".75"/>
+<!-- jacket seams -->
+<path d="M69 559L177 525L186 710M451 548L349 519L342 710" stroke="#242936" stroke-width="4"/>
+<!-- neon edge -->
+<path d="M78 400Q88 350 124 328M407 331Q445 352 459 397" stroke="#B8FF2C" stroke-opacity=".35" stroke-width="3" filter="url(#glow)"/>
+<!-- scan accents -->
+<g stroke="#B8FF2C" stroke-opacity=".6">
+ <path d="M20 610H65M455 610H500M35 635H84M436 635H485"/>
+</g>
+</svg>
