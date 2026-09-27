@@ -1504,3 +1504,204 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (prefers-reduced-motion: reduce) {
   .mobile-nav, .mobile-nav__links a, .project-visual__core, .project-visual__orbit, .project-visual > i { animation: none; }
 }
+
+/* Journey */
+.journey-intro {
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 8vw;
+  align-items: end;
+  margin-bottom: 65px;
+}
+.journey-intro > p {
+  margin: 0 0 4px;
+  max-width: 460px;
+  color: #858585;
+  line-height: 1.7;
+}
+.journey {
+  position: relative;
+  padding: 20px 0;
+}
+.journey__rail {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  left: 31px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(183,255,60,.45), rgba(255,255,255,.06));
+}
+.journey__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr 130px;
+  gap: 25px;
+  align-items: start;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+}
+.journey__item:last-child { border-bottom: 1px solid var(--line); }
+.journey__marker {
+  position: relative;
+  z-index: 2;
+  width: 62px;
+  min-height: 62px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 3px;
+  background: #080808;
+  border: 1px solid rgba(183,255,60,.28);
+  color: var(--accent);
+}
+.journey__marker span { font: 8px "DM Mono", monospace; color: #5f5f5f; }
+.journey__content { padding-top: 2px; }
+.journey__year { color: var(--accent); font: 9px "DM Mono", monospace; letter-spacing: .08em; }
+.journey__content h3 { margin: 9px 0 4px; font-size: clamp(23px, 3vw, 35px); letter-spacing: -.045em; }
+.journey__content strong { color: #888; font-size: 12px; font-weight: 500; }
+.journey__content p { max-width: 720px; margin: 13px 0 0; color: #737373; line-height: 1.7; font-size: 13px; }
+.journey__signal { padding-top: 5px; color: #4d4d4d; font: 9px "DM Mono", monospace; text-align: right; }
+.journey__item:hover .journey__marker { box-shadow: 0 0 28px rgba(183,255,60,.08); color: #d8ff9b; }
+
+/* Command palette */
+.command-trigger {
+  position: fixed;
+  z-index: 42;
+  right: 5vw;
+  bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 10px;
+  border: 1px solid var(--line);
+  background: rgba(10,10,10,.76);
+  color: #666;
+  backdrop-filter: blur(16px);
+  font: 8px "DM Mono", monospace;
+  cursor: pointer;
+}
+.command-trigger:hover { color: var(--accent); border-color: rgba(183,255,60,.28); }
+.command-trigger kbd { padding: 3px 5px; border: 1px solid rgba(255,255,255,.08); color: #8a8a8a; font: 8px "DM Mono", monospace; }
+.command-overlay {
+  position: fixed;
+  z-index: 110;
+  inset: 0;
+  display: grid;
+  place-items: start center;
+  padding-top: 15vh;
+  background: rgba(0,0,0,.62);
+  backdrop-filter: blur(10px);
+}
+.command-modal {
+  width: min(620px, calc(100vw - 30px));
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.12);
+  background: #0b0b0b;
+  box-shadow: 0 30px 100px rgba(0,0,0,.65);
+  animation: commandIn .28s cubic-bezier(.2,.8,.2,1) both;
+}
+.command-modal__top {
+  display: grid;
+  grid-template-columns: 20px 1fr 32px;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 13px;
+  border-bottom: 1px solid var(--line);
+  color: #676767;
+}
+.command-modal__top form { min-width: 0; }
+.command-modal__top input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #eee;
+  font: 13px "DM Mono", monospace;
+}
+.command-modal__top button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--line);
+  background: #111;
+  color: #999;
+}
+.command-list { max-height: 360px; overflow: auto; }
+.command-list a {
+  display: grid;
+  grid-template-columns: 1fr 24px 18px;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  color: #bbb;
+  font-size: 13px;
+  transition: background .2s, color .2s;
+}
+.command-list a:hover { color: var(--accent); background: rgba(183,255,60,.035); }
+.command-list a i {
+  width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  color: #555;
+  font: 8px "DM Mono", monospace;
+  font-style: normal;
+}
+.command-empty { padding: 25px 16px; color: #555; font: 10px "DM Mono", monospace; }
+.command-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 13px;
+  border-top: 1px solid var(--line);
+  color: #444;
+  font: 8px "DM Mono", monospace;
+}
+
+/* Cursor-follow project preview */
+.project__cursor-preview {
+  position: absolute;
+  z-index: 3;
+  left: calc(var(--gx) - 90px);
+  top: calc(var(--gy) - 48px);
+  width: 180px;
+  min-height: 96px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(183,255,60,.28);
+  background: rgba(8,8,8,.84);
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateZ(38px) scale(.94);
+  transition: opacity .18s ease, transform .18s ease;
+}
+.project__cursor-preview span { color: var(--accent); font: 8px "DM Mono", monospace; }
+.project__cursor-preview strong { margin-top: 5px; font-size: 18px; letter-spacing: -.04em; }
+.project__cursor-preview small { margin-top: 4px; color: #707070; font: 8px "DM Mono", monospace; text-transform: uppercase; }
+.project--interactive:hover .project__cursor-preview { opacity: 1; transform: translateZ(38px) scale(1); }
+
+@keyframes commandIn {
+  from { opacity: 0; transform: translateY(-12px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 980px) {
+  .journey-intro { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 720px) {
+  .command-trigger { display: none; }
+  .journey__item { grid-template-columns: 54px 1fr; gap: 18px; }
+  .journey__rail { left: 26px; }
+  .journey__marker { width: 52px; min-height: 52px; }
+  .journey__signal { display: none; }
+  .project__cursor-preview { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .command-modal { animation: none; }
+  .project__cursor-preview { transition: none; }
+}
