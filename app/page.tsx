@@ -6,6 +6,7 @@ import ContactPanel from "@/components/contact-panel";
 import SmoothScroll from "@/components/smooth-scroll";
 import SectionReveal from "@/components/section-reveal";
 import CursorField from "@/components/cursor-field";
+import IntroLoader from "@/components/intro-loader";
 import GitHubLive from "@/components/github-live";
 import CyberLab from "@/components/cyber-lab";
 
@@ -103,6 +104,7 @@ export default function Home() {
     <main>
       <SmoothScroll />
       <SectionReveal />
+      <IntroLoader />
       <CursorField />
       <div className="noise" />
 
@@ -118,6 +120,9 @@ export default function Home() {
           <a href="#github">GitHub</a>
           <a href="#contact">Contact</a>
         </nav>
+        <a className="nav__resume" href="/resume">
+          RESUME <ArrowUpRight size={14} />
+        </a>
 
         <a
           className="nav__cta"
