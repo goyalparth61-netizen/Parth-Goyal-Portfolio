@@ -121,14 +121,6 @@ export default function Home() {
           RESUME <ArrowUpRight size={14} />
         </a>
 
-        <a
-          className="nav__cta"
-          href="https://github.com/goyalparth61-netizen"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub <ArrowUpRight size={15} />
-        </a>
         <MobileNav />
       </header>
 
