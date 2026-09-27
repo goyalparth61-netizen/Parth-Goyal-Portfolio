@@ -12,6 +12,13 @@ export default function AIAssistant() {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
+  const quickPrompts = [
+    "What cybersecurity projects has Parth built?",
+    "Tell me about ZeroTrace.",
+    "What technologies does Parth work with?",
+    "How can I contact Parth?",
+  ];
+
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: "assistant",
@@ -77,6 +84,19 @@ export default function AIAssistant() {
             <button className="icon-button" onClick={() => setOpen(false)} aria-label="Close AI">
               <X size={18} />
             </button>
+          </div>
+
+          <div className="ai-panel__quick">
+            {quickPrompts.map((prompt) => (
+              <button
+                key={prompt}
+                type="button"
+                onClick={() => setInput(prompt)}
+                disabled={loading}
+              >
+                {prompt}
+              </button>
+            ))}
           </div>
 
           <div className="ai-panel__messages">
