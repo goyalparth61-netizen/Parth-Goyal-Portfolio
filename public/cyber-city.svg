@@ -1,0 +1,100 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="960" y1="0" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#10101A"/>
+    <stop offset="0.48" stop-color="#06070B"/>
+    <stop offset="1" stop-color="#030405"/>
+  </linearGradient>
+  <linearGradient id="neonA" x1="0" y1="0" x2="1" y2="1">
+    <stop stop-color="#B8FF2C" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#56FFB0" stop-opacity=".1"/>
+  </linearGradient>
+  <linearGradient id="neonB" x1="0" y1="0" x2="1" y2="0">
+    <stop stop-color="#8A6CFF" stop-opacity=".8"/>
+    <stop offset="1" stop-color="#FF4FB3" stop-opacity=".08"/>
+  </linearGradient>
+  <filter id="glowA">
+    <feGaussianBlur stdDeviation="7" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="glowB">
+    <feGaussianBlur stdDeviation="13" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+
+<rect width="1920" height="1080" fill="url(#bg)"/>
+
+<!-- atmospheric glows -->
+<ellipse cx="1280" cy="370" rx="650" ry="450" fill="#5A3EFF" fill-opacity=".055"/>
+<ellipse cx="1540" cy="610" rx="510" ry="360" fill="#B8FF2C" fill-opacity=".045"/>
+<ellipse cx="620" cy="860" rx="550" ry="320" fill="#00D6FF" fill-opacity=".025"/>
+
+<!-- distant skyline -->
+<g opacity=".48">
+  <rect x="0" y="500" width="95" height="580" fill="#08090D"/>
+  <rect x="105" y="390" width="70" height="690" fill="#0A0A10"/>
+  <rect x="190" y="450" width="120" height="630" fill="#07080C"/>
+  <rect x="330" y="310" width="160" height="770" fill="#0A0B10"/>
+  <rect x="515" y="440" width="82" height="640" fill="#090A0E"/>
+  <rect x="620" y="250" width="185" height="830" fill="#0B0C11"/>
+  <rect x="835" y="390" width="130" height="690" fill="#090A0E"/>
+  <rect x="1000" y="210" width="205" height="870" fill="#0B0C11"/>
+  <rect x="1240" y="340" width="126" height="740" fill="#090A0E"/>
+  <rect x="1390" y="180" width="170" height="900" fill="#0A0B10"/>
+  <rect x="1585" y="290" width="125" height="790" fill="#090A0E"/>
+  <rect x="1730" y="420" width="190" height="660" fill="#07080C"/>
+</g>
+
+<!-- tower edge lights -->
+<path d="M330 310V1080" stroke="#8A6CFF" stroke-width="2" opacity=".38" filter="url(#glowB)"/>
+<path d="M1000 210V1080" stroke="#B8FF2C" stroke-width="2" opacity=".3" filter="url(#glowA)"/>
+<path d="M1390 180V1080" stroke="#8A6CFF" stroke-width="2" opacity=".38" filter="url(#glowB)"/>
+
+<!-- window matrix -->
+<g opacity=".45">
+  <g fill="#B8FF2C">
+    <rect x="40" y="545" width="4" height="14"/><rect x="64" y="610" width="4" height="10"/><rect x="120" y="520" width="4" height="15"/>
+    <rect x="214" y="505" width="4" height="18"/><rect x="272" y="565" width="4" height="11"/><rect x="348" y="408" width="4" height="17"/>
+    <rect x="392" y="468" width="4" height="11"/><rect x="651" y="330" width="4" height="18"/><rect x="705" y="445" width="4" height="13"/>
+    <rect x="1055" y="270" width="4" height="17"/><rect x="1125" y="360" width="4" height="11"/><rect x="1460" y="250" width="4" height="18"/>
+    <rect x="1530" y="420" width="4" height="13"/><rect x="1660" y="370" width="4" height="15"/><rect x="1810" y="510" width="4" height="10"/>
+  </g>
+  <g fill="#9A7CFF">
+    <rect x="150" y="480" width="4" height="15"/><rect x="378" y="350" width="4" height="12"/><rect x="545" y="505" width="4" height="16"/>
+    <rect x="745" y="290" width="4" height="10"/><rect x="890" y="510" width="4" height="13"/><rect x="1090" y="420" width="4" height="18"/>
+    <rect x="1305" y="410" width="4" height="13"/><rect x="1445" y="340" width="4" height="10"/><rect x="1700" y="485" width="4" height="17"/>
+  </g>
+</g>
+
+<!-- holographic billboards -->
+<g filter="url(#glowA)" opacity=".8">
+  <rect x="210" y="610" width="155" height="88" rx="8" stroke="url(#neonA)" fill="#B8FF2C" fill-opacity=".025"/>
+  <rect x="760" y="560" width="175" height="96" rx="8" stroke="url(#neonB)" fill="#8A6CFF" fill-opacity=".025"/>
+  <rect x="1500" y="500" width="180" height="108" rx="8" stroke="url(#neonA)" fill="#B8FF2C" fill-opacity=".025"/>
+</g>
+
+<g opacity=".32" stroke="#D9F7A8">
+  <path d="M230 634h110M230 650h78M230 666h92"/>
+  <path d="M785 584h125M785 603h90M785 622h108"/>
+  <path d="M1528 526h120M1528 545h94M1528 564h110"/>
+</g>
+
+<!-- perspective road / data lanes -->
+<g opacity=".32">
+  <path d="M0 1080L700 740" stroke="url(#neonB)" stroke-width="2"/>
+  <path d="M1920 1080L1210 740" stroke="url(#neonA)" stroke-width="2"/>
+  <path d="M360 1080L860 740" stroke="#FFFFFF" stroke-opacity=".06"/>
+  <path d="M1550 1080L1090 740" stroke="#FFFFFF" stroke-opacity=".06"/>
+</g>
+
+<!-- digital rain -->
+<g stroke-linecap="round">
+  <path d="M123 140v48M150 250v26M184 176v75M1760 116v44M1698 224v68M1520 112v46" stroke="#B8FF2C" stroke-opacity=".22" />
+  <path d="M1320 150v82M1365 225v44M900 90v54M830 170v36M110 300v44" stroke="#8A6CFF" stroke-opacity=".22"/>
+</g>
+
+<!-- horizon -->
+<path d="M0 770C350 728 540 755 820 748C1120 740 1450 770 1920 728" stroke="#FFFFFF" stroke-opacity=".06"/>
+<path d="M0 760C350 718 540 745 820 738C1120 730 1450 760 1920 718" stroke="url(#neonA)" stroke-opacity=".12"/>
+</svg>
