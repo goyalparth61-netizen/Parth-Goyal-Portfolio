@@ -18,6 +18,7 @@ import MobileNav from "@/components/mobile-nav";
 import HeroHud from "@/components/hero-hud";
 import HeroMetrics from "@/components/hero-metrics";
 import CyberMarquee from "@/components/cyber-marquee";
+import ThemeToggle from "@/components/theme-toggle";
 import ActivityHeatmap from "@/components/activity-heatmap";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
@@ -120,9 +121,12 @@ export default function Home() {
           <a href="#github">GitHub</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="nav__resume" href="/resume">
-          RESUME <ArrowUpRight size={14} />
-        </a>
+        <div className="nav__tools">
+          <a className="nav__resume" href="/resume">
+            RESUME <ArrowUpRight size={14} />
+          </a>
+          <ThemeToggle />
+        </div>
 
         <MobileNav />
       </header>
@@ -132,7 +136,7 @@ export default function Home() {
         <div className="hero__city" aria-hidden="true" />
         <img
           className="hero__avatar"
-          src="https://avatars.githubusercontent.com/u/229990387?v=4"
+          src="/cyber-avatar.svg"
           alt=""
           aria-hidden="true"
         />
@@ -168,7 +172,7 @@ export default function Home() {
           <div className="hero__meta reveal reveal--delay-4">
             <span>02ND YEAR B.TECH</span>
             <span>QUANTUM UNIVERSITY</span>
-            <span>CYBERSECURITY / AI / FULL-STACK</span>
+            <span>ROORKEE, INDIA</span>
           </div>
         </div>
 
@@ -179,9 +183,12 @@ export default function Home() {
           </div>
           <div className="terminal__body">
             <p><b>01</b> $ whoami</p>
-            <p className="terminal__accent">cybersecurity · ai · full-stack</p>
-            <p><b>02</b> $ status <span className="terminal__success">● online</span></p>
-            <p><b>03</b> $ _<span className="cursor" /></p>
+            <p className="terminal__accent">aspiring-cybersecurity-professional</p>
+            <p><b>02</b> $ focus --list</p>
+            <p className="terminal__dim">network-security · ethical-hacking · ai</p>
+            <p><b>03</b> $ status</p>
+            <p className="terminal__success">● building / learning / shipping</p>
+            <p><b>04</b> $ _<span className="cursor" /></p>
           </div>
         </div>
 
