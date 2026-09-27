@@ -1,7 +1,14 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import AIAssistant from "@/components/ai-assistant";
 import ContactPanel from "@/components/contact-panel";
+import SmoothScroll from "@/components/smooth-scroll";
+import SectionReveal from "@/components/section-reveal";
+
+const Hero3D = dynamic(() => import("@/components/hero-3d"), {
+  ssr: false,
+});
 
 import {
   ArrowUpRight,
@@ -91,6 +98,8 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 export default function Home() {
   return (
     <main>
+      <SmoothScroll />
+      <SectionReveal />
       <div className="noise" />
 
       <header className="nav">
@@ -117,6 +126,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="hero__grid" />
+        <Hero3D />
         <div className="hero__orb hero__orb--one" />
         <div className="hero__orb hero__orb--two" />
 
