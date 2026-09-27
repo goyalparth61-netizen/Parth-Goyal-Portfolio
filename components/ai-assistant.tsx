@@ -76,7 +76,7 @@ export default function AIAssistant() {
           <div className="ai-panel__top">
             <div className="ai-panel__brand">
               <img
-                src="https://avatars.githubusercontent.com/u/229990387?v=4"
+                src="/cyber-avatar.svg"
                 alt=""
                 className="ai-panel__avatar"
               />
