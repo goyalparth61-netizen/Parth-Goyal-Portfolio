@@ -12,6 +12,8 @@ import InteractiveProject from "@/components/interactive-project";
 import GitHubLive from "@/components/github-live";
 import CyberLab from "@/components/cyber-lab";
 import SkillOrbit from "@/components/skill-orbit";
+import MobileNav from "@/components/mobile-nav";
+import ActivityHeatmap from "@/components/activity-heatmap";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
   ssr: false,
@@ -123,6 +125,7 @@ export default function Home() {
         >
           GitHub <ArrowUpRight size={15} />
         </a>
+        <MobileNav />
       </header>
 
       <section className="hero" id="top">
@@ -316,6 +319,7 @@ export default function Home() {
         </div>
 
         <GitHubLive />
+        <ActivityHeatmap />
       </section>
 
       <section className="section section--lab">
