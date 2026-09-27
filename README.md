@@ -12,6 +12,8 @@ A premium interactive portfolio for **Parth Goyal**, focused on cybersecurity, f
 - AI question logging for the private admin inbox
 - Contact form that emails Parth
 - Call-request form with preferred date/time
+- Live GitHub telemetry and recent public repositories
+- Safe interactive Cyber Lab / terminal simulation
 - GitHub / LinkedIn / email contact links
 - Protected admin dashboard at `/admin`
 
