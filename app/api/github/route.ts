@@ -39,6 +39,12 @@ export async function GET() {
     ).length;
 
     return NextResponse.json({
+      publicEvents: Array.isArray(events) ? events.slice(0, 100).map(
+        (event: { created_at?: string; type?: string }) => ({
+          created_at: event.created_at,
+          type: event.type,
+        })
+      ) : [],
       profile: {
         login: profile.login,
         public_repos: profile.public_repos,
