@@ -34,7 +34,7 @@ const projects = [
     description:
       "An agent-trace evaluation platform focused on failure detection, root-cause analysis, adversarial evaluation, and reliability signals.",
     tags: ["AI", "Backend", "Evaluation"],
-    link: "https://github.com/archisharma158-cmd/ZeroTrace",
+    link: "/work/zerotrace",
   },
   {
     index: "02",
@@ -43,7 +43,7 @@ const projects = [
     description:
       "A multi-agent intelligence platform combining a modern frontend, FastAPI services, AI integrations, and agent-oriented system design.",
     tags: ["React", "TypeScript", "FastAPI"],
-    link: "https://github.com/archisharma158-cmd/APS-Minds",
+    link: "/work/aps-minds",
   },
   {
     index: "03",
@@ -52,7 +52,7 @@ const projects = [
     description:
       "A full-stack travel experience built around adaptive flows, AI integrations, and a scalable React + FastAPI architecture.",
     tags: ["React", "FastAPI", "AI"],
-    link: "https://github.com/goyalparth61-netizen/Ankahi-Manzil",
+    link: "/work/ankahi-manzil",
   },
   {
     index: "04",
@@ -61,7 +61,7 @@ const projects = [
     description:
       "A machine-learning project for classifying social profiles with behavioral and profile-level signals using a neural-network pipeline.",
     tags: ["Python", "TensorFlow", "ML"],
-    link: "https://github.com/archisharma158-cmd/ProSpy_Fake_Account_Detector",
+    link: "/work/prospy",
   },
   {
     index: "05",
@@ -70,7 +70,7 @@ const projects = [
     description:
       "One of Parth's project repositories — presented here as a technical build-space for experimentation and iteration.",
     tags: ["GitHub", "Build", "Explore"],
-    link: "https://github.com/goyalparth61-netizen/Agnite",
+    link: "/work/agnite",
   },
 ];
 
