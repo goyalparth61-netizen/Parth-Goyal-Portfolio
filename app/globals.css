@@ -1121,3 +1121,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .resume-page { padding: 0; background: #fff; }
   .resume-sheet { width: 100%; min-height: 100vh; box-shadow: none; }
 }
+
+.route-enter {
+  animation: routeEnter .65s cubic-bezier(.2,.8,.2,1) both;
+}
+@keyframes routeEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
