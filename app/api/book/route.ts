@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { insertRow, sendEmail } from "@/lib/server";
+import { escapeHtml, insertRow, sendEmail } from "@/lib/server";
 
 function clean(value: unknown, max = 500) {
   return String(value ?? "").trim().slice(0, max);
@@ -43,11 +43,11 @@ export async function POST(request: Request) {
       replyTo: email,
       html: `
         <h2>New call request</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Preferred date:</b> ${date}</p>
-        <p><b>Preferred time:</b> ${time}</p>
-        <p><b>Topic:</b> ${topic || "Not provided"}</p>
+        <p><b>Name:</b> ${escapeHtml(name)}</p>
+        <p><b>Email:</b> ${escapeHtml(email)}</p>
+        <p><b>Preferred date:</b> ${escapeHtml(date)}</p>
+        <p><b>Preferred time:</b> ${escapeHtml(time)}</p>
+        <p><b>Topic:</b> ${escapeHtml(topic || "Not provided")}</p>
         <p>Status: pending manual confirmation.</p>
       `,
     });
