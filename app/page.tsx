@@ -254,8 +254,6 @@ export default function Home() {
             <a
               className="project"
               href={project.link}
-              target="_blank"
-              rel="noreferrer"
               key={project.title}
             >
               <div className="project__index">{project.index}</div>
