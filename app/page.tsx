@@ -1,6 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import AIAssistant from "@/components/ai-assistant";
 import ContactPanel from "@/components/contact-panel";
 import SmoothScroll from "@/components/smooth-scroll";
@@ -22,10 +21,6 @@ import ThemeToggle from "@/components/theme-toggle";
 import HeroNetwork from "@/components/hero-network";
 import ActivityHeatmap from "@/components/activity-heatmap";
 
-const Hero3D = dynamic(() => import("@/components/hero-3d"), {
-  ssr: false,
-});
-
 import {
   ArrowUpRight,
   Github,
@@ -43,48 +38,27 @@ import {
 const projects = [
   {
     index: "01",
-    title: "ZeroTrace",
-    type: "AI Reliability Engine",
-    description:
-      "An agent-trace evaluation platform focused on failure detection, root-cause analysis, adversarial evaluation, and reliability signals.",
-    tags: ["AI", "Backend", "Evaluation"],
-    link: "/work/zerotrace",
+    title: "AGRO-OPTIMA",
+    type: "AI + Agriculture",
+    description: "Intelligent fertilizer optimization system using ML.",
+    tags: ["AI", "ML", "Agriculture"],
+    link: "/work/agro-optima",
   },
   {
     index: "02",
-    title: "APS Minds",
-    type: "Multi-Agent Intelligence",
-    description:
-      "A multi-agent intelligence platform combining a modern frontend, FastAPI services, AI integrations, and agent-oriented system design.",
-    tags: ["React", "TypeScript", "FastAPI"],
-    link: "/work/aps-minds",
+    title: "ZeroTrace",
+    type: "Cyber Security",
+    description: "Privacy-focused digital footprint analyzer.",
+    tags: ["Security", "OSINT", "AI"],
+    link: "/work/zerotrace",
   },
   {
     index: "03",
-    title: "Ankahi Manzil",
-    type: "AI Travel Platform",
-    description:
-      "A full-stack travel experience built around adaptive flows, AI integrations, and a scalable React + FastAPI architecture.",
-    tags: ["React", "FastAPI", "AI"],
-    link: "/work/ankahi-manzil",
-  },
-  {
-    index: "04",
-    title: "ProSpy",
-    type: "Fake Account Detector",
-    description:
-      "A machine-learning project for classifying social profiles with behavioral and profile-level signals using a neural-network pipeline.",
-    tags: ["Python", "TensorFlow", "ML"],
-    link: "/work/prospy",
-  },
-  {
-    index: "05",
-    title: "Agnite",
-    type: "Build Lab",
-    description:
-      "One of Parth's project repositories — presented here as a technical build-space for experimentation and iteration.",
-    tags: ["GitHub", "Build", "Explore"],
-    link: "/work/agnite",
+    title: "Portfolio Website",
+    type: "Full-Stack",
+    description: "A modern, animated portfolio with AI assistant.",
+    tags: ["Next.js", "React", "AI"],
+    link: "/work/portfolio",
   },
 ];
 
@@ -120,6 +94,7 @@ export default function Home() {
           <a href="#skills">Skills</a>
           <a href="#journey">Journey</a>
           <a href="#github">GitHub</a>
+          <a href="#lab">Cyber Lab</a>
           <a href="#contact">Contact</a>
         </nav>
         <div className="nav__tools">
@@ -141,7 +116,6 @@ export default function Home() {
           alt=""
           aria-hidden="true"
         />
-        <Hero3D />
         <HeroHud />
         <HeroNetwork />
 
@@ -209,69 +183,47 @@ export default function Home() {
         </div>
 
         <div className="about-grid">
-          <div>
-            <h2 className="display">
-              Curious by nature.
-              <br />
-              <em>Security-minded</em> by design.
-            </h2>
+          <div className="about-copy-main">
+            <h2 className="about-heading">ABOUT ME</h2>
+            <p>
+              I&apos;m Parth, a Cyber Security student passionate about technology,
+              problem solving and building impactful projects. I love exploring AI,
+              security, and full-stack development, and I believe in continuous
+              learning and turning ideas into real solutions.
+            </p>
+            <a className="button button--ghost about-more" href="#journey">More About Me <ArrowUpRight size={15} /></a>
           </div>
 
-          <div className="about-copy">
-            <p>
-              I&apos;m Parth Goyal, a Cyber Security student exploring the
-              intersection of software engineering, intelligent systems,
-              networking, and offensive security.
-            </p>
-            <p>
-              My work is driven by hands-on building: prototypes, technical
-              projects, experiments, and constant learning across the stack.
-            </p>
+          <div className="about-quote" aria-hidden="true">
+            <span>“</span>
+            <strong>CURIOUS<br />CREATIVE<br />CONSISTENT</strong>
+            <span>”</span>
+          </div>
 
-            <div className="about-facts">
-              <div>
-                <span>EDUCATION</span>
-                <strong>B.Tech · Cyber Security</strong>
-              </div>
-              <div>
-                <span>UNIVERSITY</span>
-                <strong>Quantum University</strong>
-              </div>
-              <div>
-                <span>LOCATION</span>
-                <strong>Haridwar, Uttarakhand</strong>
+          <div className="about-facts">
+            <div>
+              <span>EDUCATION</span>
+              <strong>B.Tech CSE (Cyber Security)</strong>
+              <small>Quantum University<br />2023 — 2027</small>
+            </div>
+            <div>
+              <span>LOCATION</span>
+              <strong>India</strong>
+              <small>Open to opportunities</small>
+            </div>
+            <div>
+              <span>INTERESTS</span>
+              <div className="interest-tags">
+                <b>Cyber Security</b><b>AI</b><b>Web Development</b><b>Research</b>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section section--journey" id="journey">
-        <div className="section__head">
-          <SectionLabel>02 / JOURNEY</SectionLabel>
-          <div className="section__count">[02]</div>
-        </div>
-
-        <div className="journey-intro">
-          <div>
-            <h2 className="display display--compact">
-              The path so far.
-              <br />
-              <em>Still in motion.</em>
-            </h2>
-          </div>
-          <p>
-            Education, technical direction, and the foundation behind Parth&apos;s
-            current cybersecurity and AI-focused work.
-          </p>
-        </div>
-
-        <JourneyTimeline />
-      </section>
-
       <section className="section section--work" id="work">
         <div className="section__head">
-          <SectionLabel>03 / SELECTED WORK</SectionLabel>
+          <SectionLabel>02 / FEATURED PROJECTS</SectionLabel>
           <div className="section__count">[03]</div>
         </div>
 
@@ -300,6 +252,29 @@ export default function Home() {
             />
           ))}
         </div>
+      </section>
+
+      <section className="section section--journey" id="journey">
+        <div className="section__head">
+          <SectionLabel>03 / JOURNEY</SectionLabel>
+          <div className="section__count">[02]</div>
+        </div>
+
+        <div className="journey-intro">
+          <div>
+            <h2 className="display display--compact">
+              The path so far.
+              <br />
+              <em>Still in motion.</em>
+            </h2>
+          </div>
+          <p>
+            Education, technical direction, and the foundation behind Parth&apos;s
+            current cybersecurity and AI-focused work.
+          </p>
+        </div>
+
+        <JourneyTimeline />
       </section>
 
       <section className="section section--skills" id="skills">
