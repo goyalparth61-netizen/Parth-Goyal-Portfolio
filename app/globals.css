@@ -1191,3 +1191,27 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: none !important;
   }
 }
+
+.ai-panel__quick {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.ai-panel__quick::-webkit-scrollbar { display: none; }
+.ai-panel__quick button {
+  flex: 0 0 auto;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  background: #101010;
+  color: #7d7d7d;
+  font: 8px "DM Mono", monospace;
+  cursor: pointer;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.ai-panel__quick button:hover {
+  color: var(--accent);
+  border-color: rgba(183,255,60,.35);
+  background: rgba(183,255,60,.04);
+}
