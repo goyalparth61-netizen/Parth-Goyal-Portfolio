@@ -155,7 +155,7 @@ export default function Home() {
         <div className="hero__terminal reveal reveal--delay-2">
           <div className="terminal__top">
             <span><i /> <i /> <i /></span>
-            <span>parth@secure-lab</span>
+            <span>SYSTEM_01&nbsp;&nbsp;&nbsp;&nbsp;16:28:14</span>
           </div>
           <div className="terminal__body">
             <p><b>01</b> $ whoami</p>
@@ -166,6 +166,9 @@ export default function Home() {
             <p className="terminal__success">● building / learning / shipping</p>
             <p><b>04</b> $ _<span className="cursor" /></p>
           </div>
+        </div>
+        <div className="hero-focus" aria-hidden="true">
+          <span>FOCUS</span><span>LEARN</span><span>BUILD</span><strong>REPEAT_</strong>
         </div>
 
         <a className="scroll-hint" href="#about">
@@ -224,7 +227,7 @@ export default function Home() {
       <section className="section section--work" id="work">
         <div className="section__head">
           <SectionLabel>02 / FEATURED PROJECTS</SectionLabel>
-          <div className="section__count">[03]</div>
+          <div className="section__count">[02]</div>
         </div>
 
         <div className="work-intro">
@@ -257,7 +260,7 @@ export default function Home() {
       <section className="section section--journey" id="journey">
         <div className="section__head">
           <SectionLabel>03 / JOURNEY</SectionLabel>
-          <div className="section__count">[02]</div>
+          <div className="section__count">[03]</div>
         </div>
 
         <div className="journey-intro">
