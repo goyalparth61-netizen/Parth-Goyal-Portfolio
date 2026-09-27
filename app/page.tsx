@@ -15,6 +15,7 @@ import SkillOrbit from "@/components/skill-orbit";
 import JourneyTimeline from "@/components/journey-timeline";
 import CommandBar from "@/components/command-bar";
 import MobileNav from "@/components/mobile-nav";
+import HeroHud from "@/components/hero-hud";
 import ActivityHeatmap from "@/components/activity-heatmap";
 
 const Hero3D = dynamic(() => import("@/components/hero-3d"), {
@@ -133,6 +134,7 @@ export default function Home() {
           aria-hidden="true"
         />
         <Hero3D />
+        <HeroHud />
 
         <div className="hero__content">
           <div className="eyebrow reveal">
