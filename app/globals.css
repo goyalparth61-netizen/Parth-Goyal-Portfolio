@@ -2281,3 +2281,297 @@ body {
     animation: none;
   }
 }
+
+/* Cyber city backdrop */
+.hero__city {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5,5,7,.98) 0%, rgba(5,5,7,.78) 28%, rgba(5,5,7,.18) 58%, rgba(5,5,7,.5) 100%),
+    linear-gradient(180deg, rgba(5,5,7,.28) 0%, transparent 45%, rgba(5,5,7,.7) 100%),
+    url("/cyber-city.svg") center right / cover no-repeat;
+  opacity: .78;
+  filter: saturate(.9) contrast(1.08);
+  transform: scale(1.02);
+}
+.hero__city::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      180deg,
+      transparent 0,
+      transparent 5px,
+      rgba(255,255,255,.012) 6px,
+      transparent 7px
+    );
+  mix-blend-mode: screen;
+  opacity: .5;
+}
+.hero__avatar {
+  z-index: 2;
+  right: 17vw;
+  top: 52%;
+  width: clamp(250px, 27vw, 390px);
+  opacity: .2;
+  filter: grayscale(.9) contrast(1.16) brightness(.66) sepia(.05) hue-rotate(18deg);
+  mix-blend-mode: screen;
+  box-shadow:
+    0 0 0 1px rgba(184,255,44,.1),
+    0 0 0 12px rgba(184,255,44,.015),
+    0 0 100px rgba(138,108,255,.11);
+}
+.hero-3d {
+  inset: 4vh -2vw 0 56vw;
+  z-index: 2;
+  opacity: .55;
+  mix-blend-mode: screen;
+}
+.hero-3d__vignette {
+  background:
+    radial-gradient(circle at 52% 48%, transparent 0 25%, rgba(5,5,7,.18) 45%, rgba(5,5,7,.92) 85%),
+    linear-gradient(90deg, rgba(5,5,7,.7), transparent 50%);
+}
+.hero-hud {
+  z-index: 4;
+  right: 9vw;
+  top: 13vh;
+  width: min(500px, 36vw);
+  opacity: .94;
+}
+.hero-hud__avatar {
+  opacity: .42;
+  filter: grayscale(1) contrast(1.2) brightness(.62) drop-shadow(0 0 16px rgba(184,255,44,.08));
+}
+.hero-hud__frame {
+  background:
+    linear-gradient(90deg, transparent 49.8%, rgba(255,255,255,.04) 50%, transparent 50.2%),
+    linear-gradient(0deg, transparent 49.8%, rgba(255,255,255,.04) 50%, transparent 50.2%),
+    linear-gradient(135deg, rgba(184,255,44,.02), transparent 40%, rgba(138,108,255,.02));
+}
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: min(600px, 100%);
+  margin-top: 34px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.hero-metric {
+  min-width: 0;
+  padding: 14px 15px 13px 0;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.hero-metric + .hero-metric { padding-left: 15px; }
+.hero-metric:last-child { border-right: 0; }
+.hero-metric strong {
+  display: block;
+  color: #f0f0eb;
+  font: 700 22px/1 "DM Mono", monospace;
+  letter-spacing: -.04em;
+}
+.hero-metric span {
+  display: block;
+  margin-top: 7px;
+  color: #5e6064;
+  font: 7px "DM Mono", monospace;
+  letter-spacing: .1em;
+  white-space: nowrap;
+}
+.hero__meta {
+  margin-top: 17px;
+  font-size: 9px;
+  gap: 16px;
+}
+.hero__meta span::before {
+  content: "•";
+  margin-right: 7px;
+  color: rgba(184,255,44,.45);
+}
+.hero__meta span:first-child::before { display: none; }
+
+/* Full page cinematic pacing */
+.section:not(.section--contact) {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.008), transparent 20%, rgba(255,255,255,.005) 80%, transparent);
+}
+.section--intro {
+  min-height: 78vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.section--journey {
+  min-height: 92vh;
+}
+.section--work {
+  min-height: 100vh;
+}
+.section--skills {
+  min-height: 88vh;
+}
+.section--github {
+  min-height: 92vh;
+}
+.section--lab {
+  min-height: 92vh;
+}
+.section--contact {
+  min-height: 85vh;
+}
+.section__head {
+  position: relative;
+}
+.section__head::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -20px;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(184,255,44,.12), transparent 65%);
+}
+
+/* Cyberpunk project cards */
+.project {
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.012), transparent 35%),
+    rgba(255,255,255,.005);
+}
+.project__type {
+  color: #676a70;
+  letter-spacing: .13em;
+}
+.project h3 {
+  text-shadow: 0 0 22px rgba(184,255,44,.02);
+}
+.project__tags span {
+  border-color: rgba(255,255,255,.08);
+  background: rgba(255,255,255,.012);
+}
+.project--interactive:hover {
+  border-color: rgba(184,255,44,.09);
+  background:
+    radial-gradient(circle at var(--gx) var(--gy), rgba(184,255,44,.035), transparent 32%),
+    rgba(184,255,44,.012);
+}
+
+/* AI becomes a holographic deck */
+.ai-panel {
+  border-color: rgba(184,255,44,.16);
+  box-shadow:
+    0 30px 100px rgba(0,0,0,.72),
+    0 0 60px rgba(138,108,255,.06),
+    inset 0 0 35px rgba(184,255,44,.015);
+}
+.ai-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(180deg, transparent 0 5px, rgba(255,255,255,.008) 6px, transparent 7px);
+  opacity: .5;
+}
+.ai-panel__top,
+.ai-panel__messages,
+.ai-panel__form,
+.ai-panel__trust,
+.ai-panel__quick { position: relative; z-index: 2; }
+.ai-panel__identity {
+  letter-spacing: .15em;
+}
+.ai-panel__identity::after {
+  content: " / PORTFOLIO NODE";
+  color: #47494e;
+}
+.ai-message--assistant {
+  border-color: rgba(255,255,255,.065);
+}
+.ai-message--user {
+  background: linear-gradient(135deg, #b8ff2c, #d9ff90);
+}
+.ai-panel__form input {
+  border-color: rgba(184,255,44,.12);
+}
+
+/* Cyberpunk button micro-motion */
+.button--primary,
+.form-submit,
+.nav__resume {
+  position: relative;
+  overflow: hidden;
+}
+.button--primary::after,
+.form-submit::after,
+.nav__resume::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -80%;
+  width: 55%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+  transform: skewX(-22deg);
+  transition: left .55s ease;
+}
+.button--primary:hover::after,
+.form-submit:hover::after,
+.nav__resume:hover::after {
+  left: 125%;
+}
+
+@media (max-width: 1100px) {
+  .hero__city { opacity: .62; }
+  .hero__avatar { right: 12vw; width: 270px; }
+  .hero-hud { right: 3vw; width: 340px; }
+  .hero-3d { inset: 15vh -6vw 0 52vw; opacity: .46; }
+  .hero-metrics { width: min(540px, 100%); }
+}
+@media (max-width: 980px) {
+  .hero__city {
+    opacity: .44;
+    background-position: 63% center;
+  }
+  .hero__avatar {
+    right: 6vw;
+    top: 45%;
+    width: 220px;
+    opacity: .14;
+  }
+  .hero-hud {
+    top: 21vh;
+    right: 3vw;
+    width: 300px;
+    opacity: .64;
+  }
+  .hero-3d { inset: 31vh -10vw 0 42vw; opacity: .34; }
+  .hero-metrics { max-width: 560px; }
+}
+@media (max-width: 640px) {
+  .hero__city {
+    opacity: .28;
+    background-position: 65% center;
+  }
+  .hero__avatar {
+    top: 43%;
+    right: -7vw;
+    width: 180px;
+    opacity: .1;
+  }
+  .hero-hud {
+    top: 31vh;
+    right: -3vw;
+    width: 235px;
+    opacity: .4;
+  }
+  .hero-3d { inset: 42vh -24vw 10vh 10vw; opacity: .22; }
+  .hero-metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 25px; }
+  .hero-metric:nth-child(2) { border-right: 0; }
+  .hero-metric:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.08); }
+  .hero-metric:nth-child(3),
+  .hero-metric:nth-child(4) { padding-top: 14px; }
+  .hero__meta {
+    display: none;
+  }
+}
